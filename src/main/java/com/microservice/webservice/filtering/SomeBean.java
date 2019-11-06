@@ -1,14 +1,18 @@
 package com.microservice.webservice.filtering;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonFilter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
-@JsonIgnoreProperties(value= {"field1", "field2"})
+//@JsonIgnoreProperties(value= {"field3"})
+@JsonFilter("SomeBeanFilter")
 public class SomeBean {
 	
 	private String field1;
+	
+	//@JsonIgnore
 	private String field2;
 	
-	//@JsonIgnore	
+	@JsonIgnore	
 	private String field3;
 	
 	public SomeBean(String field1, String field2, String field3) {
